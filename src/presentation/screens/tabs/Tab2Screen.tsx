@@ -1,9 +1,11 @@
 import {Text, View} from 'react-native';
+import {HamburguerMenu} from '../../components/shared';
 
-export const Tab1Screen = () => {
+export const Tab2Screen = () => {
   return (
     <View>
-      <Text>Tab1Screen</Text>
+      <HamburguerMenu />
+      <Text>Tab2Screen</Text>
     </View>
   );
 };
