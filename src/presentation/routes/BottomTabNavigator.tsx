@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Tab1Screen, Tab2Screen, Tab3Screen} from '../screens';
+import {Tab1Screen} from '../screens';
 import {globalColors} from '../theme/theme';
-import {Text} from 'react-native';
 import {TopTabNavigator} from './TopTabNavigator';
 import {StackNavigator} from './StackNavigator';
+import {IonIcon} from '../components/shared';
 
 const Tab = createBottomTabNavigator();
 
@@ -31,7 +31,12 @@ export const BottomTabNavigator = () => {
         name="Tab1"
         options={{
           title: 'Tab 1',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab1</Text>,
+          tabBarIcon: ({color}) => (
+            <IonIcon
+              color={globalColors.primary}
+              name="accessibility-outline"
+            />
+          ),
         }}
         component={Tab1Screen}
       />
@@ -39,7 +44,9 @@ export const BottomTabNavigator = () => {
         name="Tab2"
         options={{
           title: 'Tab 2',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab2</Text>,
+          tabBarIcon: ({color}) => (
+            <IonIcon color={globalColors.primary} name="airplane-outline" />
+          ),
         }}
         component={TopTabNavigator}
       />
@@ -47,7 +54,9 @@ export const BottomTabNavigator = () => {
         name="Tab3"
         options={{
           title: 'Tab 3',
-          tabBarIcon: ({color}) => <Text style={{color}}>Tab3</Text>,
+          tabBarIcon: ({color}) => (
+            <IonIcon color={globalColors.primary} name="alarm-outline" />
+          ),
         }}
         component={StackNavigator}
       />
